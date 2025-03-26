@@ -14,13 +14,13 @@ function Checkout({choices = [], pizzaPrice=85.50}) {
             <h3>Sipariş Toplamı</h3>
             <div>
                 <span>Seçimler</span>
-                <span>{extraPrice}</span>
+                <span>{extraPrice.toFixed(2)}₺</span>
             </div>
             <div>
                 <span>Toplam</span>
-                <span>{totalPrice}</span>
+                <span>{totalPrice.toFixed(2)}₺</span>
             </div>
-            <button type="button" onClick="handleSubmit">SİPARİŞ VER</button>
+            <button type="button" onClick="handleSubmit" disabled={extraPrice === 0}>SİPARİŞ VER</button>
         </div>
     );
 }

@@ -3,15 +3,21 @@ import "./order.css";
 import Ingredients from "./ingredients";
 import Counter from "./counter";
 import Checkout from "./checkout";
+import Pizza from "./pizza";
+
+const pizzaList=[
+    {name: "Position Absolute Acı Pizza",
+    price: 85.50,
+    rating: 4.9,
+    orders: 200,
+    text: "Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta denir."
+    }
+];
 
 function Order() {
     return (
         <form className="form">
-        <h1 className="pizza-name">Position Absolute Acı Pizza</h1>
-        <h2 className="price">85.50₺</h2>
-        <p className="rating">4.9</p>
-        <p className="order-number">(200)</p>
-        <p>Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. Küçük bir pizzaya bazen pizzetta denir.</p>
+        <Pizza list={pizzaList}/>
         <label htmlFor="name">İsim</label>
         <input id="name" name="name" type="text"></input>
         <div className="size">
@@ -42,7 +48,7 @@ function Order() {
         <Ingredients />
         <label htmlFor="note">Sipariş Notu</label>
         <input id="note" name="note" type="text"></input>
-        <Counter />
+        <Counter choices={Ingredients}/>
         <Checkout/>
         </form>
         

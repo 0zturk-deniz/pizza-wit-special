@@ -14,7 +14,7 @@ function Counter() {
 
     return (
         <div>
-            <button type="button" onClick={decrease}>-</button>
+            <button type="button" onClick={decrease} disabled={count<1}>-</button>
             <span>{count}</span>
             <button type="button" onClick={increase}>+</button>
         </div>
