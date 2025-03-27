@@ -6,8 +6,7 @@ const ingredientsList = [
   "Tavuk", "Domates"
 ];
 
-function Ingredients() {
-  const [choices, setChoices] = useState([]);
+function Ingredients({choices = [], setChoices}) {
 
   const handleChange = (event) => {
     const value = event.target.value;
@@ -35,6 +34,7 @@ function Ingredients() {
         <label key={index}>
           <input
             type="checkbox"
+            name="extra"
             value={ingredient}
             checked={choices.includes(ingredient)}
             onChange={handleChange}

@@ -1,14 +1,18 @@
 import React from "react";
-import { NavLink, BrowserRouter } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 function Header() {
+    const location = useLocation();
     return (
         <header>
         <h1>Teknolojik Yemekler</h1>
-        <nav>
-            <NavLink to="/" exact>Anasayfa</NavLink>
+        {location.pathname === "/order" && (
+            <nav>
+            <NavLink to="/">Anasayfa</NavLink>
             <NavLink to="/order">Sipariş Oluştur</NavLink>
         </nav>
+        )}
+        
         </header>
     );
 }

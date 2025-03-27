@@ -4,6 +4,10 @@ import workintech from '/workintech.svg'
 import './App.css'
 import Order from "./order.jsx"
 import Header from './header.jsx'
+import Layout from './layout.jsx'
+import { Route, Routes } from 'react-router-dom'
+import Home from './home.jsx'
+import Success from './success.jsx'
 
 /*function App() {
   const [count, setCount] = useState(0)
@@ -36,13 +40,15 @@ import Header from './header.jsx'
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <Order/>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout/>}>
+        <Route index element={<Home />}/>
+        <Route path="/order" element={<Order />}/>
+        <Route path="/success" element={<Success/>}/>
+      </Route>
+    </Routes>
   );
 }
+ 
 
-  
-
-export default App
+export default App;
